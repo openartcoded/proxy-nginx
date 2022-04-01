@@ -17,4 +17,4 @@ services:
         - ./config/proxy/certbot/www:/var/www/certbot
 networks:
   proxynet:
-    name: artcoded
+    name: custom_network
