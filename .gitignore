@@ -1,0 +1,4 @@
+/data/**
+docker-compose.override.yml
+config/proxy/certbot/**
+*.pem

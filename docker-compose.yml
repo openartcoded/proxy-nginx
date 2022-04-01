@@ -1,0 +1,19 @@
+version: '3.4'
+services:
+  proxy:
+      image: nginx:alpine
+      restart: always
+      ports:
+        - "80:80"
+        - "443:443"
+      volumes:
+        - ./config/proxy/cloudflare:/etc/proxy/cloudflare
+        - ./config/proxy/conf.d:/etc/nginx/conf.d
+        - ./config/proxy/nginx.conf:/etc/nginx/nginx.conf
+        - ./data/proxy/ssl:/etc/nginx/ssl
+        - ./config/proxy/certbot/conf:/etc/proxy
+        - ./config/proxy/certbot/www:/var/www/certbot
+  networks:
+      default:
+          external:
+              name: artcoded
