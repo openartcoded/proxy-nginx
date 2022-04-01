@@ -3,6 +3,8 @@ services:
   proxy:
       image: nginx:alpine
       restart: always
+      networks:
+        artcoded:
       ports:
         - "80:80"
         - "443:443"
@@ -14,6 +16,5 @@ services:
         - ./config/proxy/certbot/conf:/etc/proxy
         - ./config/proxy/certbot/www:/var/www/certbot
 networks:
-  default:
-      external:
-          name: artcoded
+  artcoded:
+    driver: bridge
