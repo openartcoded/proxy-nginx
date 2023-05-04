@@ -8,9 +8,11 @@ services:
       ports:
         - "80:80"
         - "443:443"
+        - "8883:8883"
       volumes:
         - ./config/proxy/cloudflare:/etc/proxy/cloudflare
         - ./config/proxy/conf.d:/etc/nginx/conf.d
+        - ./config/proxy/tcpconf.d:/etc/nginx/tcpconf.d
         - ./config/proxy/nginx.conf:/etc/nginx/nginx.conf
         - ./data/proxy/ssl:/etc/nginx/ssl
         - ./config/proxy/options-ssl-nginx.conf:/etc/proxy/options-ssl-nginx.conf
