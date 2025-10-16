@@ -12,6 +12,7 @@ services:
         - ./config/proxy/conf.d:/etc/nginx/conf.d
         - ./config/proxy/tcpconf.d:/etc/nginx/tcpconf.d
         - ./config/proxy/nginx.conf:/etc/nginx/nginx.conf
+        - ./config/proxy/mime.types:/etc/nginx/mime.types
         - ./data/proxy/ssl:/etc/nginx/ssl
         - ./config/proxy/options-ssl-nginx.conf:/etc/proxy/options-ssl-nginx.conf
         - ./config/proxy/ssl-dhparams:/etc/proxy/ssl-dhparams.pem
